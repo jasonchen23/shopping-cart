@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - shopping form</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<form action="http://140.127.196.92:1234/formws5" name="reg">
+  <h1>你的購物車</h1>
+  <p>商品清單：<br>商品名稱：手錶 <br>數量：
+    <select name="amount" id="amount" onchange="amo(this)">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select></p>
+  <p>購買人全名： <input type="text" name="buyname" id="buyname" placeholder="必填"></p>
+<!--   <p>居住地： <select name="come_from" id="national">
+    <option value="null">請選擇</option>
+    <option value="taipei">台北</option>
+    <option value="taichung">台中</option>
+    <option value="tainan">台南</option>
+  </select>  </p> -->
+  <p>
+    E-mail：<input type="text" name="email" id="email" placeholder="必填" required>
+  </p>
+  <p>收件人名稱： <input type="text" name="username" id="username" placeholder="必填">
+  </p>
+  <p>地址：
+    <input type="text" name="address" id="address" placeholder="必填" required>
+  </p>
+    <p>行動電話：
+    <select name="location" id="location">
+      <option value="+86">+86</option>
+      <option value="+886" selected="selected">+886</option>
+    </select>
+    <input type="text" name="phone" id="phone" placeholder="必填" maxlength=9 required>
+  </p>
+  <p>性別：
+    <input type="radio" name="sex" value="male">男
+    <input type="radio" name="sex" value="female">女
+    <input type="radio" name="sex" value="other">其他
+  </p>
+  <p>備註： <br>
+    <textarea name="comment" id="comment" cols="70" rows="5"></textarea>
+  </p>
+  <input type="submit" value="送出">
+</form>
+<!-- partial -->
+  <script  src="./shopping-form.js"></script>
+
+</body>
+</html>

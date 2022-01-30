@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>CodePen - sign up</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  </head>
+  <body>
+    <h1>請先登入</h1>
+    <div>
+      <p>購買人全名： <input type="text" name="buyname" id="buyname" placeholder="選填"></p>
+    <p id="buyname_note"></p>
+     <p>E-mail：<input type="text" name="email" id="email" placeholder="選填" required></p>
+     <p>使用者名稱： <input type="text" name="username" id="username" placeholder="必填"></p>
+      <p> 使用者密碼 : <input name="password" id="password" type="password" placeholder="您的密碼"/>
+      <p> 驗證使用者密碼密碼 : <input name="password_check" id="password_check" type="password" placeholder="驗證密碼"/>
+    <p id="pa_ch"></p>
+      <p> <button onclick="formcheck()">submit</button>
+      <p id="warr"></p>
+    </div>
+  </body>
+  <script  src="./sign-up.js"></script>
+
+</html>

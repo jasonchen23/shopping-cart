@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - index</title>
+  <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body onload="test()">
+  <div id="test1">
+    <h1>商城</h1>
+    <img src="https://images.unsplash.com/photo-1641351557399-9af72b3e93b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="watch" style="width: 500px;">
+    <p>商品名稱：手錶 <br>數量：4 <br>商品描述：Santos腕錶，中型款，1847 MC型自動上鍊機械機芯。</p>
+    <p>數量：
+      <select name="amount" id="amount" onchange="amo(this)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </p>
+    <button onclick="send()">購買</button>
+  </div>
+</body>
+<!-- partial -->
+<script>
+  allCookies = document.cookie;
+  function test(){
+    var div = document.getElementById("test1");
+    var element1=document.createElement("div");
+    element1.id="productNo";
+    element1.type="hidden";
+    element1.value="0001";
+    div.appendChild(element1);
+    var cookies = getCookieByName("amount");
+    document.getElementById("amount").value=cookies;
+  };
+
+  function amo(x){
+    var amount = x.value;
+      $.cookie("amount",amount);
+      console.log(amount);
+  };
+
+  function send(){
+    location.href = "sign-up.html";
+  }
+
+  function parseCookie() {
+    var cookieObj = {};
+    var cookieAry = document.cookie.split(';');
+    var cookie;
+    
+    for (var i=0, l=cookieAry.length; i<l; ++i) {
+        cookie = jQuery.trim(cookieAry[i]);
+        cookie = cookie.split('=');
+        cookieObj[cookie[0]] = cookie[1];
+    }
+    
+    return cookieObj;
+}
+
+  function getCookieByName(name) {
+      var value = parseCookie()[name];
+      if (value) {
+          value = decodeURIComponent(value);
+      }
+
+      return value;
+  }
+</script>
+</html>
