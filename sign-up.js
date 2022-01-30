@@ -66,7 +66,7 @@ $(document).ready(function(){
 //         console.log(information);
       
 //         var xhr = new XMLHttpRequest();
-//         xhr.open('post', 'http://140.127.196.92:1234/login', true);
+//         xhr.open('post', 'https://140.127.196.92:1234/login', true);
 //         xhr.send(information);
 //         xhr.onload = function() {
 //           console.log(xhr.responseText);
