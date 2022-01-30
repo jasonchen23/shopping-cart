@@ -40,7 +40,7 @@ $("#password_check").keyup(
 
 $(document).ready(function(){
   $("button").click(function(){
-    $.post("http://140.127.196.92:1234/auth",{
+    $.post("https://140.127.196.92:1234/auth",{
       username: $("#username").val(),
       password: $("#password").val(),
     },
