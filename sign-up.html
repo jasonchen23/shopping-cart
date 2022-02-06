@@ -11,41 +11,85 @@
     <style>
       *{
         /* position: relative; */
-        border: 1px solid;
+        /* border: 1px solid; */
+        font-family:微軟正黑體; 
       };
       html,body{
       height: 100%;
       position: absolute;
       }
-      header,main{
-        position: relative;
-        top:50%;
+      .middle{
+        max-width: 400px;
+        max-height: 400px;
+        /* border:2px solid; */
+        border-radius: 10px;
+        background-color: rgb(176, 175, 192);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+      }
+      input{
+        padding: 5px;
+        margin-top: 20px;
+        width: 100%;
+        border: none;
+        border:1px solid #ccc;
+        border-radius: 5px;
+      }
+      h1{
+        text-align: center;
+      }
+      .center{
+        left: 50%;
+      }
+      .input{
+        max-height: 400px;
+        max-width: 400px;
+      }
+      button{
+        color: rgb(255, 255, 255);  
+        background: #131211cb;
+        width: 200px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 0px;
+      }
+      .tab{
+        height: 10px;
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="container py-2 d-flex justify-content-between">
-        <div class="py-3">
-          <h1>請先註冊</h1>
+    <div class="middle container">
+      <header>
+        <div class="container py-3 d-flex justify-content-center">
+            <h1>註冊 SIGN-UP</h1>
         </div>
-      </div>
-    </header>
-    <main class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>購買人全名： <input type="text" name="buyname" id="buyname" placeholder="選填"></p>
-          <p id="buyname_note"></p>
-          <p>E-mail：<input type="text" name="email" id="email" placeholder="選填" required></p>
-          <p>使用者名稱： <input type="text" name="username" id="username" placeholder="必填"></p>
-          <p> 使用者密碼 : <input name="password" id="password" type="password" placeholder="您的密碼"/>
-          <p> 驗證使用者密碼密碼 : <input name="password_check" id="password_check" type="password" placeholder="驗證密碼"/>
+      </header>
+      <main class="container d-flex justify-content-center">
+        <div class="row">
+          <input type="text" name="buyname" id="buyname" placeholder="購買人全名" class="col-12">
+          <div class="tab"></div>
+          <input type="text" name="email" id="email" placeholder="E-mail" required class="col-12">
+          <div class="tab"></div>
+          <input type="text" name="username" id="username" placeholder="使用者名稱" class="col-12">
+          <div class="tab"></div>
+          <input name="password" id="password" type="password" placeholder="使用者密碼" class="col-12">
+          <div class="tab"></div>
+          <input name="password_check" id="password_check" type="password" placeholder="驗證密碼" class="col-12">
           <p id="pa_ch"></p>
-          <p> <button>submit</button></p>
-          <p id="warr"></p>
+          <div class="py-1 d-flex justify-content-center">  
+            <button>註冊</button>
+            <p id="warr"></p>
+            <p id="buyname_note"></p>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </body>
   <script  src="./sign-up.js"></script>
 

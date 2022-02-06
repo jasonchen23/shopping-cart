@@ -5,51 +5,135 @@
   <title>CodePen - shopping form</title>
   <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <style>
+    .show-grid{
+  padding:10px;
+  }
+  .show-grid [class^=col-] {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: rgb(167, 78, 78);
+      background-color: rgba(164, 164, 172, 0.144);
+      /* border: 1px solid #ddd;
+      border: 1px solid rgba(86,61,124,.2); */
+  }
+  #amount, .item,p{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  input{
+    max-width: 100%;
+  }
+  .extend{
+    background-color: rgb(97, 154, 219);
+  }
+  .md{
+          border: 1px solid #ddd;
+      border: 1px solid rgba(86,61,124,.2);
+  }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<form action="http://140.127.196.92:1234/formws5" name="reg">
-  <h1>你的購物車</h1>
-  <p>商品清單：<br>商品名稱：手錶 <br>數量：
-    <select name="amount" id="amount" onchange="amo(this)">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select></p>
-  <p>購買人全名： <input type="text" name="buyname" id="buyname" placeholder="必填"></p>
-<!--   <p>居住地： <select name="come_from" id="national">
-    <option value="null">請選擇</option>
-    <option value="taipei">台北</option>
-    <option value="taichung">台中</option>
-    <option value="tainan">台南</option>
-  </select>  </p> -->
-  <p>
-    E-mail：<input type="text" name="email" id="email" placeholder="必填" required>
-  </p>
-  <p>收件人名稱： <input type="text" name="username" id="username" placeholder="必填">
-  </p>
-  <p>地址：
-    <input type="text" name="address" id="address" placeholder="必填" required>
-  </p>
-    <p>行動電話：
-    <select name="location" id="location">
-      <option value="+86">+86</option>
-      <option value="+886" selected="selected">+886</option>
-    </select>
-    <input type="text" name="phone" id="phone" placeholder="必填" maxlength=9 required>
-  </p>
-  <p>性別：
-    <input type="radio" name="sex" value="male">男
-    <input type="radio" name="sex" value="female">女
-    <input type="radio" name="sex" value="other">其他
-  </p>
-  <p>備註： <br>
-    <textarea name="comment" id="comment" cols="70" rows="5"></textarea>
-  </p>
-  <input type="submit" value="送出">
-</form>
+  <!-- partial:index.partial.html -->
+  <header class="extend">
+    <div class="container ">
+      <div class="container py-3 d-flex justify-content-center">
+        <h1>你的購物車</h1>
+      </div>
+    </div>
+  </header>
+  <main class="container show-grid">
+    <form action="" name="reg">
+    <div class="row">
+      <div class="col-6">
+        商品
+      </div>
+      <div class="col-2">
+        商品名稱
+      </div>
+      <div class="col-2">
+        數量
+      </div>
+      <div class="col-2">
+        價格
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1641351557399-9af72b3e93b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="watch" class="d-flex" style="width:100%;
+          max-width:500px;">
+        </div>
+      </div>
+      <div class="col-2">
+        <p class="item">Santos腕錶</p> 
+      </div>
+      <div class="col-2">
+        <select name="amount" id="amount" onchange="amo(this)">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <p class="item total">$$$</p>
+      </div>
+    </div>
+    <div class="row md">
+      <div class="col-12">
+        <h3 style="text-align: center; font-weight: bold;"> 購買人資訊 </h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <p>購買人全名：<br> <input type="text" name="buyname" id="buyname" placeholder="必填"></p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <p>
+          E-mail：<br><input type="text" name="email" id="email" placeholder="必填" required>
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <p>收件人名稱： <br><input type="text" name="username" id="username" placeholder="必填">
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <p>地址：<br>
+        <input type="text" name="address" id="address" placeholder="必填" required>
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <p>行動電話：<br>
+        <input type="text" name="phone" id="phone" placeholder="必填" maxlength=9 required>
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <p>性別：<br>
+          <input type="radio" name="sex" value="male">男
+          <input type="radio" name="sex" value="female">女
+          <input type="radio" name="sex" value="other">其他
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p>備註： <br>
+          <textarea name="comment" id="comment" rows="5" style="width: 100%;"></textarea>
+        </p><br>
+        <input type="submit" value="送出" class="d-flex ">
+      </div>
+    </div>
+  </form>
+  </main>
+<footer>
+
+</footer>
 <!-- partial -->
   <script  src="./shopping-form.js"></script>
 
