@@ -29,18 +29,29 @@ function checkContent(e){
 				warning = true;
     }    
 }
+// 
+// 
+function onload(){
+  let total = document.getElementById("total");
+  total.innerHTML= 20000* getCookieByName("amount") ;
+}
 var cookies = getCookieByName("amount");
     document.getElementById("amount").value=cookies;
-var cookies = getCookieByName("buyname");
+cookies = getCookieByName("buyname");
     document.getElementById("buyname").value=cookies;
+cookies = getCookieByName("username");
+    document.getElementById("username").value=cookies;
 // var cookies = getCookieByName("email");
 //     document.getElementById("email").value=cookies;    
-var cookies = getCookieByName("username");
-    document.getElementById("username").value=cookies;
 // var cookies = getCookieByName("phone");
 //     document.getElementById("phone").value=cookies;    
 // var cookies = getCookieByName("address");
 //     document.getElementById("address").value=cookies;
+
+// 
+// 
+var total = document.getElementById("amount").value;
+document.getElementById("total").innerHTML = total;
 
 var bn = document.getElementById("buyname");
 bn.addEventListener("blur",checkContent,false);
@@ -56,6 +67,14 @@ ph.addEventListener("blur",checkContent,false);
 
 var ad = document.getElementById("address");
 ad.addEventListener("blur",checkContent,false);
+
+function amo(x){
+  var amount = x.value;
+  $.cookie("amount",amount);
+  console.log(amount);
+  let total = document.getElementById("total");
+  total.innerHTML= 20000* amount ;
+};
 
 function formCheck() {
 
