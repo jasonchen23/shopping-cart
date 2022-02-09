@@ -26,23 +26,40 @@ $("#password").keyup(
   }
 }
 );
-
-// $("#password_check").keyup(
-function pach (){
+function pach(z){
   var x = $("#password").val();
   var y = $("#password_check").val();
-  if(x===y)
+  var z = true;
+  console.log(x,y);
+  if(x===y){
     $("#pa_ch").text("success");
-  else
+    return z;
+    }
+  else{
     $("#pa_ch").text("not match");
     alert("not match");
-    return false;
-}
+    z= false;
+    return z;}
+};
+
+// $("#password_check").keyup(function(){
+//   var x = $("#password").val();
+//   var y = $("#password_check").val();
+//   if(x===y)
+//     $("#pa_ch").text("success");
+//   else
+//     $("#pa_ch").text("not match");
+//     // alert("not match");
+//     return false;
+// }
 // );
 
 $(document).ready(function(){
   $("button").click(function(){
-    return pach();
+    // return pach();
+    let x = pach();
+    if (x === false){
+    return false;}
       // var x = $("#password").val();
       // var y = $("#password_check").val();
       // if(x===y)
@@ -59,12 +76,12 @@ $(document).ready(function(){
       $.cookie("authKey",data);
       if (data != "123") {
           return false;
-      }
+      };
       $.cookie("buyname",$("#buyname").val());
       $.cookie("email",$("#email").val());
       $.cookie("username",$("#username").val());
       $.cookie("password",$("#password").val());
-      location.href = "./shopping-form.html"
+      location.href = "./shopping-form.html";
     });
   });
 });
