@@ -27,19 +27,29 @@ $("#password").keyup(
 }
 );
 
-$("#password_check").keyup(
-  function (){
-    var x = $("#password").val();
-    var y = $("#password_check").val();
-    if(x===y)
-      $("#pa_ch").text("success");
-    else
-      $("#pa_ch").text("not match");
-  }
-);
+// $("#password_check").keyup(
+function pach (){
+  var x = $("#password").val();
+  var y = $("#password_check").val();
+  if(x===y)
+    $("#pa_ch").text("success");
+  else
+    $("#pa_ch").text("not match");
+    alert("not match");
+    return false;
+}
+// );
 
 $(document).ready(function(){
   $("button").click(function(){
+    return pach();
+      // var x = $("#password").val();
+      // var y = $("#password_check").val();
+      // if(x===y)
+      //   $("#pa_ch").text("success");
+      // else{
+      //   $("#pa_ch").text("not match");
+      //   return false;}
     $.post("https://www.townway.com.tw/auth",{
       username: $("#username").val(),
       password: $("#password").val(),
